@@ -1,5 +1,7 @@
 import requests
 import tkinter as tk
+from PIL import Image, ImageTk
+import ctypes 
 
 #COTAÇÃO - inicio
 def atualizarCotacao():
@@ -17,12 +19,19 @@ def atualizarCotacao():
 #JANELA - inicio
 
 janela = tk.Tk()
-#janela.iconbitmap('C:..\Icons\DolAgoraIcon.png')
 janela.title("DolAgora")
 janela.geometry("220x50")
 janela.resizable(False, False)
 titulo = tk.Label(janela, text="" , font=("Arial", 16))
 titulo.pack(pady=10)
+
+iconPath = "C:../DolAgora/Icons/DolAgoraIcon.png" #formato PNG
+iconImage = Image.open(iconPath)
+iconPhoto = ImageTk.PhotoImage(iconImage)
+janela.iconphoto(True, iconPhoto)
+ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID("DolAgoraApp")  
+janela.iconbitmap("C:/Users/andra/Desktop/DolAgora/Icons/DolAgoraIcon.ico")  #formato ico 
+
 atualizarCotacao() #função que vai manter a cotação atualizada
 janela.mainloop()
 
