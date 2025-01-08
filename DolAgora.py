@@ -30,7 +30,7 @@ iconImage = Image.open(iconPath)
 iconPhoto = ImageTk.PhotoImage(iconImage)
 janela.iconphoto(True, iconPhoto)
 ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID("DolAgoraApp")  
-janela.iconbitmap("C:/Users/andra/Desktop/DolAgora/Icons/DolAgoraIcon.ico")  #formato ico 
+janela.iconbitmap("C:../DolAgora/Icons/DolAgoraIcon.ico")  #formato ico 
 
 atualizarCotacao() #função que vai manter a cotação atualizada
 janela.mainloop()
