@@ -11,7 +11,7 @@ def atualizarCotacao():
     cotacao = dolar["value"][0]["cotacaoVenda"]
     cotacaoFormatada = f"{cotacao:.2f}" #formatação da cotação 
     titulo.config(text="Dólar agora: "f"R${cotacaoFormatada}")
-    janela.after(60000, atualizarCotacao) #Taxa de atualização da cotação em ms.
+    janela.after(5000, atualizarCotacao) #Taxa de atualização da cotação em ms.
 
 #COTAÇÃO - fim
 
@@ -25,12 +25,12 @@ janela.resizable(False, False)
 titulo = tk.Label(janela, text="" , font=("Arial", 16))
 titulo.pack(pady=10)
 
-iconPath = "C:../Icons/DolAgoraIcon.png" #formato PNG
+iconPath = "C:./Icons/DolAgoraIcon.png" #formato PNG
 iconImage = Image.open(iconPath)
 iconPhoto = ImageTk.PhotoImage(iconImage)
 janela.iconphoto(True, iconPhoto)
 ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID("DolAgoraApp")  
-janela.iconbitmap("C:../Icons/DolAgoraIcon.ico")  #formato ico 
+janela.iconbitmap("C:./Icons/DolAgoraIcon.ico")  #formato ico 
 
 atualizarCotacao() #função que vai manter a cotação atualizada
 janela.mainloop()
